@@ -7,6 +7,7 @@ public class ComplexGearSystem : MonoBehaviour, IRotate{
     #region Private Fields
     [SerializeField] private ConnectedGearsSystemDefinition connectedGears;
     [SerializeField] private bool FirstPositive = true;
+    [SerializeField] private float DebugOnlyAngle;
     #endregion
     #region Unity Methods
     void Start() {
@@ -21,6 +22,7 @@ public class ComplexGearSystem : MonoBehaviour, IRotate{
     #region MyMethods 
     public void RotateConnectedGears(float angle)
     {
+        DebugOnlyAngle = angle;
         float secondAngle=0;
 
         for (int i = 0; i < connectedGears.ListOfGears.Count; i += 2){
